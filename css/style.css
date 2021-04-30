@@ -1,0 +1,157 @@
+* {
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* priamry color */
+  --clr-p-moderate-voilet: hsl(263, 55%, 52%);
+  --clr-p-very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-p-very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --clr-p-white: hsl(0, 0%, 100%);
+  /* netural color */
+  --clr-n-light-gray: hsl(0, 0%, 81%);
+  --clr-n-light-grayish-blue: hsl(210, 46%, 95%);
+  font-size: 0.8125rem;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--clr-n-light-grayish-blue);
+}
+main {
+  width: 85%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+}
+main > .card {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "img title ."
+    "img sec ."
+    "test test test"
+    "test1 test1 test1";
+  border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
+  -moz-border-radius: 1.2rem;
+  -ms-border-radius: 1.2rem;
+  -o-border-radius: 1.2rem;
+  padding: 1.2rem 2rem;
+  margin: 1rem auto;
+  column-gap: 0.5rem;
+  /* align-content: center; */
+}
+.card > img {
+  border-radius: 50%;
+  grid-area: img;
+  width: 38px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  align-self: center;
+  border: 2px solid transparent;
+}
+/* border color for img1 and img4 */
+.card > img:first-child {
+  border-color: hsla(0, 0%, 97%, 0.56);
+}
+.card:nth-child(4) > img {
+  border-color: var(--clr-p-moderate-voilet);
+}
+/* background color for cards */
+.card:nth-child(2) {
+  background-color: var(--clr-p-very-dark-grayish-blue);
+}
+.card:nth-child(4) {
+  background-color: var(--clr-p-very-dark-blackish-blue);
+}
+.card:nth-child(3),
+.card:nth-child(5) {
+  background-color: #fff;
+}
+/* color of text and grid area of h4  */
+.card > h4:first-of-type {
+  grid-area: title;
+  align-self: flex-end;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.card > h4:last-of-type {
+  grid-area: sec;
+  color: rgba(255, 255, 255, 0.5);
+}
+.card:nth-child(3) > h4:first-of-type,
+.card:nth-child(5) > h4:first-of-type,
+.card:nth-child(3) > .title,
+.card:nth-child(5) > .title {
+  color: var(--clr-p-very-dark-blackish-blue);
+}
+.card:nth-child(3) > h4:last-of-type,
+.card:nth-child(5) > h4:last-of-type {
+  color: hsla(219, 29%, 14%, 0.5);
+}
+/* color of text for .test the second prgraph of card3 and card5 */
+.card:nth-child(3) > .test,
+.card:nth-child(5) > .test {
+  color: hsla(219, 29%, 14%, 0.75);
+}
+/* selector for all .title first prgraph */
+.card > .title {
+  grid-area: test;
+  margin: 1rem auto;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+/* selector for all .test (the second prgraph) */
+.card > .test {
+  grid-area: test1;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+/* selector for the first card */
+.card:nth-child(1) {
+  background-color: var(--clr-p-moderate-voilet);
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-position: 14.6rem top;
+  background-repeat: no-repeat;
+}
+/* css rules for desktop */
+@media only screen and (min-width: 600px) {
+  main {
+    width: 85%;
+    display: grid;
+    grid-template-areas:
+      "card1 card1 card1 card2 card5"
+      "card3 card4 card4 card4 card5";
+    gap: 0rem 2.5rem;
+    align-content: stretch;
+  }
+  .card:nth-child(1) {
+    grid-area: card1;
+    background-position: 30rem top;
+  }
+  .card:nth-child(2) {
+    grid-area: card2;
+  }
+  .card:nth-child(3) {
+    grid-area: card3;
+  }
+  .card:nth-child(4) {
+    grid-area: card4;
+  }
+  .card:nth-child(5) {
+    grid-area: card5;
+  }
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
